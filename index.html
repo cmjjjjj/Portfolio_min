@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designer. CHOI</title>
+  <link href="./css/main.css" rel="stylesheet">
+  <script src="./js/main.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/suit-webfont@1.0.1/dist/suit.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <div class="logo">
+        Designer. CHOI
+      </div>
+    </a>
+
+    <!-- 상단 메뉴 영역 -->
+    <nav>
+      <ul class="main-nav">
+        <li>
+          <a href="#">PROJECT</a>
+          <ul class="sub-nav">
+            <li><a href="poster.html">포스터/카드뉴스</a></li>
+            <li><a href="video.html">영상 기획/제작</a></li>
+            <li><a href="veloza.html">VLOZA 쇼핑몰 브랜딩</a></li>
+            <li><a href="uxui.html">UX/UI 앱 서비스 기획</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">DESIGN</a>
+          <ul class="sub-nav">
+            <li><a href="details.html">상세페이지 디자인</a></li>
+            <li><a href="banner.html">배너 디자인</a></li>
+            <li><a href="appre.html">모바일앱 리브랜딩</a></li>
+            <li><a href="ads.html">광고소재 디자인</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="contest.html">CONTEST</a>
+
+        </li>
+        <li>
+          <a href="about.html">ABOUT ME</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero_content">
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">
+          <span><mark class="highlight">클라이언트의 니즈를</mark> 실용적인</span><br>
+          <span>디자인으로 <mark class="highlight">풀어내는 디자이너</mark>입니다</span>
+        </h1>
+        <div class="hero-divider"></div>
+        <a href="about.html" class="hero_more-btn">프로필 더보기 ></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-section">
+    <h2>공모전 참가</h2>
+    <span>교내·교외 공모전</span>
+    <div class="awards-flex">
+      <!-- 왼쪽: 교내 공모전 -->
+      <div class="award-col left">
+        <div class="video-area ratio-16-9">
+          <a href="contest.html">
+            <video autoplay muted loop playsinline>
+              <source src="img/contest/뤼튼에게 무엇이든 물어봐.mp4" type="video/mp4" loop autoplay playsinline>
+            </video>
+            <!-- 또는 <img src="썸네일1.jpg" alt="교내 영상 썸네일"> -->
+          </a>
+        </div>
+        <span class="award-title">교내 공모전 "대상"</span>
+        <p>2024.06.05.<br>
+          생성형 AI를 활용한 크리에이티브 공모전<br>
+          주최: 인하공업전문대학</p>
+      </div>
+
+      <div class="award-col right">
+        <div class="video-area ratio-16-9">
+          <a href="#contest">
+            <video autoplay muted loop playsinline>
+              <source src="img/contest/학과홍보_숏폼.mp4" type="video/mp4" loop autoplay playsinline>
+            </video>
+          </a>
+        </div>
+        <span class="award-title">교내 공모전 "대상"</span>
+        <p>2024.05.31.<br>
+          Shoot! POM(Production Of Movie) 나는 경진대회<br>
+          주최: 인하공업전문대학</p>
+      </div>
+    </div>
+    <button class="more-btn" onclick="location.href='contest.html'">
+      <span class="plus-icon">+</span>
+    </button>
+    <span class="more_text">공모전 더보기</span>
+
+  </section>
+
+  <section class="About">
+    <div class="accordion-wrapper">
+      <h2>Design</h2>
+      <div class="section-inner">
+        <div class="accordion-content">
+          <ul class="accordion">
+            <li>
+              <div class="number">
+                <a href="details.html">
+                  <img src="img/main/상세.png" alt="상세페이지">
+              </div>
+              <div class="info">
+                <h3>상세페이지</h3>
+                <p>설명절 선물세트 기획전에 맞춰 기획</p>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="number">
+                <a href="banner.html">
+                  <img src="img/main/배너.png" alt="배너">
+              </div>
+              <div class="info">
+                <h3>배너</h3>
+                <p>계절 배너 중 가을에 맞춘 이미지</p>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="number">
+                <a href="poster.html">
+                  <img src="img/main/카드뉴스.png" alt="포스터&카드뉴스">
+              </div>
+              <div class="info">
+                <h3>포스터&카드뉴스</h3>
+                <p>2025 대학 생활 참인성 캠프 카드뉴스</p>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="skills-wrapper">
+      <h2>SKILLS</h2>
+      <div class="skills-container">
+
+        <!-- Photoshop -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <img src="img/main/Adobe Photoshop.png" alt="Photoshop">
+            </div>
+            <div class="skill-info">
+              <span class="skill-name">Photoshop</span>
+              <span class="skill-percentage">95%</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percentage="95"></div>
+          </div>
+        </div>
+
+        <!-- Illustrator -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <img src="img/main/Adobe Illustrator.png" alt="Illustrator">
+            </div>
+            <div class="skill-info">
+              <span class="skill-name">Illustrator</span>
+              <span class="skill-percentage">92%</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percentage="92"></div>
+          </div>
+        </div>
+
+        <!-- Premiere Pro -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <img src="img/main/Adobe Premiere Pro.png" alt="Premiere Pro">
+            </div>
+            <div class="skill-info">
+              <span class="skill-name">Premiere Pro</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percentage="85"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 Designer. CHOI Portfolio</p>
+      <p class="email">Contact: <a href="mailto:errr48@naver.com">errr48@naver.com</a></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

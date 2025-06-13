@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer. CHOI_interview_videpinyerview</title>
+    <link href="./css/video_interview.css" rel="stylesheet">
+    <script src="./js/video_interview.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/suit-webfont@1.0.1/dist/suit.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="logo">
+                Designer. CHOI
+            </div>
+        </a>
+
+        <!-- 상단 메뉴 영역 -->
+        <nav>
+            <ul class="main-nav">
+                <li>
+                    <a href="#">PROJECT</a>
+                    <ul class="sub-nav">
+                        <li><a href="poster.html">포스터/카드뉴스</a></li>
+                        <li><a href="video.html">영상 기획/제작</a></li>
+                        <li><a href="veloza.html">VLOZA 쇼핑몰 브랜딩</a></li>
+                        <li><a href="uxui.html">UX/UI 앱 서비스 기획</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">DESIGN</a>
+                    <ul class="sub-nav">
+                        <li><a href="details.html">상세페이지 디자인</a></li>
+                        <li><a href="banner.html">배너 디자인</a></li>
+                        <li><a href="appre.html">모바일앱 리브랜딩</a></li>
+                        <li><a href="ads.html">광고소재 디자인</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contest.html">CONTEST</a>
+
+                </li>
+                <li>
+                    <a href="about.html">ABOUT ME</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="menu">
+        <a href="/video.html">
+            <h1>영상 기획 및 제작</h1>
+        </a>
+        <span class="in_nav">
+            <p><a href="/video_interview.html">학과 재학생 인터뷰</a></p>ㅣ
+            <p><a href="/video_camping.html">뚜바뚜바 캠핑장</a></p>ㅣ
+            <p><a href="/video_environment.html">환경신호등</a></p>
+        </span>
+    </div>
+
+    <!-- 인터뷰 섹션 -->
+    <section class="interview" id="interview">
+        <div class="interview_video">
+            <video id="mainVideo" src="img/video/영상편집심화 2조_인터뷰.mp4" autoplay muted loop playsinline>
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="content-right">
+                <div class="interview_video-text">
+                    <h3>학과 재학생 인터뷰<span class="day">｜ 2025.06.02 ~ 2025.06.03</span></h3>
+                    <p>
+                        학과 재학생들의 생생한 경험과 이야기를 담은 인터뷰 영상입니다.
+                        <br> 학과 생활과 진로에 대한 솔직한 이야기를 통해 예비 신입생들에게 도움이 되고자 제작하였습니다.
+                        <br> 실제 재학생들의 다양한 관점과 경험을 통해 학과에 대한 현실적인 정보를 제공합니다.
+                    </p>
+                </div>
+
+                <div class="bottom-section">
+                    <div class="contributions">
+                        <h2>기여도 <span> &nbsp; | &nbsp; 80%</span></h2>
+                        <div class="contribution-box">
+                            <div class="row">
+                                <div>
+                                    <span class="label">기획</span>
+                                    <div class="dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="label">촬영</span>
+                                    <div class="dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <span class="label">편집</span>
+                                    <div class="dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tools-used">
+                    <h2>사용툴</h2>
+                    <div class="tools-container">
+                        <div class="tool-item">
+                            <img src="img/main/Adobe Premiere Pro.png" alt="Adobe Premiere Pro">
+                        </div>
+                        <div class="tool-item">
+                            <img src="img/main/After Effects.png" alt="Adobe After Effects">
+                        </div>
+                    </div>
+                </div>
+                <p class="info"> ※영상을 클릭하면 전체영상 및 소리가 재생됩니다</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 인터뷰 비디오 모달 -->
+    <div id="videoModal" class="modal">
+        <span class="close" data-modal="videoModal">&times;</span>
+        <video class="modal-content" id="modalVideo" controls>
+            <source src="img/video/영상편집심화 2조_인터뷰.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2025 Designer. CHOI Portfolio</p>
+            <p class="email">Contact: <a href="mailto:errr48@naver.com">errr48@naver.com</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

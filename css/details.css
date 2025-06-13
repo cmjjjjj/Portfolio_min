@@ -1,0 +1,367 @@
+@charset "utf-8";
+
+:root {
+    --font-kr: 'SUIT', sans-serif;
+    --font-en: 'Inter', sans-serif;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 8px 24px rgba(0, 201, 255, 0.2);
+    --text-color: #fff;
+}
+
+body {
+    font-family: var(--font-kr);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #2d2d2d;
+}
+
+h1,
+h2,
+nav,
+.en-text {
+    font-family: var(--font-en);
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    background-color: #1f2020;
+    padding: 30px 40px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ffe500;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul.main-nav {
+    display: flex;
+    gap: 60px;
+}
+
+nav ul.main-nav > li {
+    position: relative;
+}
+
+nav ul.main-nav > li > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul.main-nav > li > a:hover {
+    color: #00c9ff;
+}
+
+nav ul.sub-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-align: center;
+    width: 200px;
+    z-index: 100;
+}
+
+nav ul.main-nav > li:hover > ul.sub-nav {
+    display: flex;
+}
+
+nav ul.sub-nav li {
+    padding: 5px 0;
+}
+
+nav ul.sub-nav li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul.sub-nav li a:hover {
+    color: #00c9ff;
+}
+
+/* 메뉴 영역 */
+.menu {
+    width: 100%;
+    height: 10vh;
+    padding: 150px 0 0 0;
+}
+
+.menu h1 {
+    color: #00c9ff;
+    font-size: 3rem;
+}
+
+.in_nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 30px 0;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 1.2rem;
+}
+
+.in_nav p a {
+    text-decoration: none;
+    color: #fff;
+    padding: 17px;
+}
+
+.in_nav p a:hover,
+.in_nav p a.active {
+    text-decoration: none;
+    color: #ffe500;
+    font-weight: bold;
+}
+
+/* 상세페이지 디자인 썸네일 그리드 */
+.details-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 200px 30px 50px 30px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    max-width: 600px;
+    height: 800px; /* 원하는 고정 높이로 조정 */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    justify-content: flex-end; /* 내용이 하단에 붙도록 */
+}
+
+.img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.img:hover {
+    transform: translateY(-10px);
+}
+
+.img:hover::before {
+    opacity: 1;
+}
+
+.img img {
+    width: 85%;
+    height: 800px;      /* 이미지 세로 고정 */
+    object-fit: cover;  /* 비율 유지하며 잘라냄 */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.img:hover img {
+    transform: scale(1.02);
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    color: var(--text-color);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.img:hover .content {
+    transform: translateY(-5px);
+}
+
+.content h3 {
+    color: #ffe500;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.img:hover .content h3 {
+    color: #ffe500;
+}
+
+.content .day {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.content p {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .details-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 180px 10px 30px 10px;
+    }
+    .img {
+        max-width: 350px;
+        padding: 18px;
+    }
+    .content h3 {
+        font-size: 1.2rem;
+    }
+    .content p {
+        font-size: 0.95rem;
+    }
+    .content {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 160px;
+    }
+    header {
+        padding: 20px;
+    }
+    .menu {
+        padding: 15px 0 0 0;
+    }
+    .menu h1 {
+        font-size: 2rem;
+    }
+    nav ul.main-nav {
+        gap: 30px;
+    }
+    .details-container {
+        grid-template-columns: 1fr;
+        padding: 120px 5px 20px 5px;
+        gap: 15px;
+    }
+    .img {
+        max-width: 95vw;
+        padding: 12px;
+    }
+    .content h3 {
+        font-size: 1.05rem;
+    }
+    .content p {
+        font-size: 0.9rem;
+    }
+    .content {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 120px;
+    }
+    header {
+        padding: 15px;
+    }
+    .menu {
+        padding: 10px 0 0 0;
+    }
+    .menu h1 {
+        font-size: 1.1rem;
+    }
+    .in_nav {
+        font-size: 0.9rem;
+    }
+    nav ul.main-nav {
+        gap: 15px;
+    }
+    .img {
+        padding: 5px;
+    }
+    .content h3 {
+        font-size: 0.95rem;
+    }
+    .content p {
+        font-size: 0.8rem;
+    }
+}
+
+footer{
+    padding: 2rem;
+    background-color: #000000;
+    position: relative;
+    color: #ffffff;
+    height: 100px;
+  }
+
+  .email{
+    font-size: 0.8rem;
+  }
+
+  .email a{
+    text-decoration: none;
+    color: #fff;
+  }
+
