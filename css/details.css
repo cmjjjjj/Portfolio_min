@@ -348,6 +348,49 @@ nav ul.sub-nav li a:hover {
     }
 }
 
+/* 모달 배경 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    overflow-y: auto;
+}
+
+/* 닫기 버튼 */
+.modal-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* 이미지 컨테이너 */
+.modal-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 실제 이미지 */
+.modal-content img {
+    width: 860px;       /* 고정 width */
+    height: auto;       /* 원본 height 유지 */
+    display: block;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+
 footer{
     padding: 2rem;
     background-color: #000000;
