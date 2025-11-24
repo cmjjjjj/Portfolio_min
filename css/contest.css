@@ -1,0 +1,548 @@
+@charset "utf-8";
+
+:root {
+    --font-kr: 'SUIT', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+body {
+    height: 100%;
+    font-family: var(--font-kr);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #2d2d2d;
+}
+
+main, .environment, .menu {
+  flex: 1 0 auto; /* 콘텐츠가 늘어남 */
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+nav,
+.en-text {
+    font-family: var(--font-en);
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    background-color: #1f2020;
+    padding: 30px 40px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ffe500;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul.main-nav {
+    display: flex;
+    gap: 60px;
+}
+
+nav ul.main-nav>li {
+    position: relative;
+}
+
+nav ul.main-nav>li>a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul.main-nav>li>a:hover {
+    color: #00c9ff;
+}
+
+nav ul.sub-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-align: center;
+    width: 200px;
+    z-index: 100;
+}
+
+nav ul.main-nav>li:hover>ul.sub-nav {
+    display: flex;
+}
+
+nav ul.sub-nav li {
+    padding: 5px 0;
+}
+
+nav ul.sub-nav li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul.sub-nav li a:hover {
+    color: #00c9ff;
+}
+
+/* 메뉴 영역 */
+.menu {
+    width: 0 auto;
+    height: 10vh;
+    padding: 150px;
+}
+
+.menu h1 {
+    color: #00c9ff;
+    font-size: 3rem;
+}
+
+.in_nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 30px 0;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 1.2rem;
+}
+
+.in_nav p a {
+    text-decoration: none;
+    color: #fff;
+    padding: 17px;
+}
+
+.in_nav p a:hover,
+.in_nav p a.active {
+    text-decoration: none;
+    color: #ffe500;
+    font-weight: bold;
+}
+
+
+/* 환경 섹션 레이아웃 */
+.environment {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 0;
+}
+
+.environment-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.environment-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.environment-left video {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 12px;
+    /* mainVideo와 info 사이 간격 줄임 */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.environment-left video:hover {
+    transform: scale(1.02);
+}
+
+/* 숏폼 비디오 전용 스타일 */
+.shot{
+    margin: 100px 0;
+}
+
+.shot .environment-left video {
+    max-width: 340px;
+    height: 600px;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.info {
+    margin: 0 auto;
+    padding: 8px 24px;
+    color: #ffd7d7;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    width: fit-content;
+    min-width: 220px;
+}
+
+.environment-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* h3와 p 사이 간격 줄임 */
+    width: 100%;
+    align-items: stretch;
+}
+
+.environment_video-text h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffe500;
+    text-align: left;
+    margin: 0 0 2px 0;
+    /* h3 아래 간격 최소화 */
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.environment_video-text .day {
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 200;
+}
+
+.environment_video-text p {
+    font-size: 1.13rem;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+    line-height: 1.4;
+    /* 행간 줄임 */
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    max-width: 700px;
+    margin: 1.5rem 0 0 0;
+    position: relative;
+}
+
+.contributions {
+    flex: 1 1 0;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contributions h2 {
+    font-size: 1.2rem;
+    color: #ffe500;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.contributions h2 span {
+    color: #fff;
+    font-weight: normal;
+}
+
+.contribution-box {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.row>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.label {
+    font-weight: 500;
+    color: #111;
+    text-align: left;
+    font-size: 1rem;
+    min-width: 75px;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.dots {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    height: 1.2em;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    display: inline-block;
+}
+
+.dot.filled {
+    background: #ffe500;
+}
+
+/* 정확히 contributions와 tools-used 사이 중앙에 오도록 조정 */
+.vertical-separator {
+    width: 2px;
+    min-width: 2px;
+    height: 200px;
+    background: #ffffff;
+    margin: 0 40px;
+    border-radius: 6px;
+    align-self: center;
+    position: relative;
+    top: 0;
+}
+
+.tools-used {
+    font-family: 'SUIT', sans-serif;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 1.2rem;
+    width: 300px;
+}
+
+.tools-used h2 {
+    font-size: 1.2rem;
+    color: #ffe500;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+
+.tools-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.tool-item img {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+}
+
+.horizontal-separator {
+    width: 80vw;
+    max-width: none;
+    height: 1px;
+    background: #ffffff;
+    border-radius: 2px;
+    margin: 30px auto 30px auto; /* 기존: 40px auto 0 auto */
+    display: block;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+#videoModal .modal-content {
+    width: 50vw;
+    max-width: 600px;
+    box-shadow: 0 0 20px #000;
+    border-radius: 10px;
+    animation: zoomIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 10000;
+}
+
+.close:hover {
+    color: #ffe500;
+}
+
+/* 반응형 */
+@media (max-width: 1100px) {
+    .environment-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 4rem 1rem;
+    }
+
+    .environment-left video {
+        max-width: 100%;
+    }
+
+    .bottom-row {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin: 2rem auto 0 auto;
+    }
+
+    .vertical-separator {
+        width: 100%;
+        height: 2px;
+        margin: 24px 0;
+    }
+
+    .contributions,
+    .tools-used {
+        max-width: 100%;
+        flex: 1 1 100%;
+        align-items: center;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding-top: 180px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .menu {
+        padding: 10px 15px;
+    }
+
+    .menu h1 {
+        font-size: 2rem;
+    }
+
+    .in_nav {
+        font-size: 1rem;
+    }
+
+    .environment_video-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .environment_video-text p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+.footer {
+  flex-shrink: 0;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  height: 100px;
+  text-align: center;
+}
+
+.email {
+    font-size: 0.8rem;
+}
+
+.email a {
+    text-decoration: none;
+    color: #fff;
+}

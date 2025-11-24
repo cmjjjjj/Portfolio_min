@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+:root {
+    --font-kr: 'SUIT', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-kr);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #2d2d2d;
+}
+
+h1,
+h2,
+nav,
+.en-text {
+    font-family: var(--font-en);
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    background-color: #1f2020;
+    padding: 30px 40px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ffe500;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul.main-nav {
+    display: flex;
+    gap: 60px;
+}
+
+nav ul.main-nav>li {
+    position: relative;
+}
+
+nav ul.main-nav>li>a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul.main-nav>li>a:hover {
+    color: #00c9ff;
+}
+
+nav ul.sub-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-align: center;
+    width: 200px;
+    z-index: 100;
+}
+
+nav ul.main-nav>li:hover>ul.sub-nav {
+    display: flex;
+}
+
+nav ul.sub-nav li {
+    padding: 5px 0;
+}
+
+nav ul.sub-nav li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul.sub-nav li a:hover {
+    color: #00c9ff;
+}
+
+/* 메뉴 영역 */
+.menu {
+    width: 0 auto;
+    height: 10vh;
+    padding: 150px;
+}
+
+.menu h1 {
+    color: #00c9ff;
+    font-size: 3rem;
+}
+
+.in_nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 30px 0;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 1.2rem;
+}
+
+.in_nav p a {
+    text-decoration: none;
+    color: #fff;
+    padding: 17px;
+}
+
+.in_nav p a:hover,
+.in_nav p a.active {
+    text-decoration: none;
+    color: #ffe500;
+    font-weight: bold;
+}
+
+
+/* 비디오 컨테이너 - 수평 배치를 위한 추가 코드 */
+.video-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 50px 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+
+.video {
+    width: 500px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 201, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.video:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.video:hover::before {
+    opacity: 1;
+}
+
+.video_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Video styling */
+.video_text video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.video:hover .video_text video {
+    transform: scale(1.02);
+}
+
+/* Vertical video styling */
+#video_interview,
+#video_camping {
+    max-height: 600px;
+    width: 70%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Horizontal video styling */
+#video_environment {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    margin: 175px 0 145px 0;
+}
+
+/* Content styling */
+.content {
+    width: 100%;
+    padding: 20px;
+    color: var(--text-color);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.video:hover .content {
+    transform: translateY(-5px);
+}
+
+.content h3 {
+    color: #ffe500;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.video:hover .content h3 {
+    color: #ffe500;
+}
+
+.content .day {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.content p {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 200px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .menu {
+        top: 80px;
+        padding: 15px 0;
+    }
+
+    .menu h1 {
+        font-size: 2rem;
+    }
+
+    nav ul.main-nav {
+        gap: 30px;
+    }
+
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video {
+        width: 90%;
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .content h3 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    #video_interview,
+    #video_camping {
+        max-height: 500px;
+    }
+
+    #video_environment {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 180px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .menu {
+        top: 70px;
+        padding: 10px 0;
+    }
+
+    .menu h1 {
+        font-size: 1.8rem;
+    }
+
+    .in_nav {
+        font-size: 1rem;
+    }
+
+    nav ul.main-nav {
+        gap: 15px;
+    }
+
+    .video {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    #video_interview,
+    #video_camping,
+    #video_environment {
+        max-height: none;
+        width: 100%;
+    }
+}
+
+footer{
+    padding: 2rem;
+    background-color: #000000;
+    position: relative;
+    color: #ffffff;
+    height: 100px;
+  }
+
+  .email{
+    font-size: 0.8rem;
+  }
+
+  .email a{
+    text-decoration: none;
+    color: #fff;
+  }
